@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Resources\PostResource;
 
 class PostIndexController extends Controller
 {
@@ -12,6 +13,6 @@ class PostIndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Post::all();
+        return PostResource::collection(Post::all());
     }
 }

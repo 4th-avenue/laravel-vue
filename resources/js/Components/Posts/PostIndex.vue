@@ -6,7 +6,7 @@ const posts = ref([]);
 
 const getPosts = () => {
     axios.get('/api/posts')
-    .then(res => posts.value = res.data)
+    .then(res => posts.value = res.data.data)
     .catch(error => console.log(error))
 };
 
