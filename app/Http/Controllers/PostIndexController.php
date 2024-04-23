@@ -13,6 +13,6 @@ class PostIndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return PostResource::collection(Post::all());
+        return PostResource::collection(Post::latest()->limit(12)->get());
     }
 }

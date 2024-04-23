@@ -9,8 +9,10 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-    <div id="app">
+    <x-header />
+    <div id="app" class="max-w-7xl mx-auto">
         {{ $slot }}
     </div>
+    <x-footer />
 </body>
 </html>
