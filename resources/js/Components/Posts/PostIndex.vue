@@ -1,6 +1,7 @@
 <script setup>
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
+import DefaultLayout from '../Layouts/DefaultLayout.vue';
 
 const posts = ref([]);
 
@@ -14,12 +15,14 @@ onMounted(() => getPosts());
 </script>
 
 <template>
-    <h1>All Posts</h1>
-    <div>
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <h2>{{ post.title }}</h2>
-            </li>
-        </ul>
-    </div>
+    <DefaultLayout>
+        <h1>All Posts</h1>
+        <div>
+            <ul>
+                <li v-for="post in posts" :key="post.id">
+                    <h2>{{ post.title }}</h2>
+                </li>
+            </ul>
+        </div>
+    </DefaultLayout>
 </template>
